@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Montserrat:wght@600&display=swap');
 /* Interactive: Button hover effect */
 .hero-store-btn.btn-hovered {
   transform: scale(1.07) rotate(-2deg);
@@ -26,40 +27,6 @@
   color: #fff;
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 1.1rem;
-  padding: 0.8em 2em;
-  border-radius: 2em;
-  box-shadow: 0 4px 24px #e5393533;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s, transform 0.35s;
-  z-index: 2000;
-}
-.toast-msg.show {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-/* ABOUT PAGE - Figma accurate layout */
-.about-title {
-  color: #222;
-  font-family: 'Nunito', Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 2.2rem;
-  text-align: center;
-}
-.about-mission-block {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-.about-mission-title {
-  color: #e53935;
-  font-weight: 400;
-}
-.about-list {
-  color: #222;
-  font-size: 1.25rem;
-  font-weight: 600;
-  font-family: 'Montserrat', 'Nunito', Arial, sans-serif;
   text-align: left;
   margin: 0.5rem 0 0 0;
   padding-left: 1.2em;
@@ -469,7 +436,7 @@
   .different-img-placeholder { width: 120px; height: 120px; font-size: 0.8rem; }
   .different-list { min-width: 120px; max-width: 160px; font-size: 0.8rem; }
 }
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Montserrat:wght@600&display=swap');
+/* moved @import to top */
 /* Section color backgrounds to match Figma */
 body {
   margin: 0;
@@ -506,6 +473,7 @@ body {
 }
 .hero-logo-row {
   width: 100%;
+}
 .hero-flex {
   display: flex;
   flex-direction: column;
@@ -718,21 +686,21 @@ body {
   section.features-row.features-bg {
     max-width: 100% !important;
     width: 100% !important;
-    margin: 0 !important;
+  margin: 0 !important;
     border-radius: 0;
   }
   .features-row {
     max-width: 100% !important;
     width: 100% !important;
-    margin: 0 !important; /* override desktop centering/negative margins */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  margin: 0 !important; /* override desktop centering */
+  padding-left: 1rem !important;  /* inner safe padding */
+  padding-right: 1rem !important;
   }
 
   /* Prevent About content from being cut on narrow screens */
-  .about-row { flex-direction: column; align-items: center; gap: 0.9rem; margin-left: 0; margin-right: 0; }
-  .about-problem-block, .about-solution-block { max-width: 92vw; }
-  .about-phone-img { width: 65vw; max-width: 340px; height: auto; margin: 0 auto; }
+  .about-row { flex-direction: column; align-items: center; gap: 1rem; margin-left: 0; margin-right: 0; padding-left: 1rem; padding-right: 1rem; }
+  .about-problem-block, .about-solution-block { width: 100%; max-width: 640px; }
+  .about-phone-img { width: min(70vw, 340px); height: auto; margin: 0 auto; }
 
   /* So hover animations don’t cause clipping on small screens */
   .feature-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 8px 24px #e5393533; }
@@ -743,4 +711,4 @@ body {
 
 /* Avoid any horizontal scrolling caused by transforms/gaps */
 html, body { overflow-x: hidden; }
-}
+*, *::before, *::after { box-sizing: border-box; }
