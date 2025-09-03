@@ -702,9 +702,10 @@ body {
   .hero-col-left { padding-top: 1rem; padding-bottom: 0.5rem; margin-left: 0; }
   .hero-headline { font-size: 1.4rem; text-align: center; }
   .hero-subtext { font-size: 1rem; text-align: center; }
-  .features-row { flex-direction: column; gap: 0.75rem; padding-left: 0.5rem; padding-right: 0.5rem; }
-  .feature-card { width: 100%; max-width: 420px; min-width: 0; font-size: 0.95rem; margin: 0 auto; }
-  .about-section { padding: 2rem 0.5rem 1.2rem 0.5rem; }
+  /* Full-bleed red background on features, even spacing */
+  .features-row { flex-direction: column; gap: 0.9rem; padding-left: 0; padding-right: 0; width: 100% !important; margin: 0 !important; }
+  .feature-card { width: calc(100% - 2rem); max-width: 520px; min-width: 0; font-size: 0.95rem; margin: 0 auto; border-radius: 1rem; }
+  .about-section { padding: 2rem 1rem 1.2rem 1rem; }
   .navbar-links { margin-right: 1rem; }
   .navbar-link { margin: 0 0.7rem; }
   .navbar-logo-img { height: 32px; }
@@ -724,11 +725,20 @@ body {
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important; /* override desktop centering/negative margins */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   /* Prevent About content from being cut on narrow screens */
-  .about-row { flex-direction: column; align-items: center; gap: 0.8rem; }
-  .about-phone-img { max-width: 85vw; height: auto; }
+  .about-row { flex-direction: column; align-items: center; gap: 0.9rem; margin-left: 0; margin-right: 0; }
+  .about-problem-block, .about-solution-block { max-width: 92vw; }
+  .about-phone-img { width: 65vw; max-width: 340px; height: auto; margin: 0 auto; }
+
+  /* So hover animations don’t cause clipping on small screens */
+  .feature-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 8px 24px #e5393533; }
+
+  /* Consistent side padding for text sections */
+  .about-section, .different-section { padding-left: 1rem; padding-right: 1rem; }
 }
 
 /* Avoid any horizontal scrolling caused by transforms/gaps */
