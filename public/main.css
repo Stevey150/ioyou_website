@@ -707,6 +707,14 @@ body {
 
   /* Consistent side padding for text sections */
   .about-section, .different-section { padding-left: 1rem; padding-right: 1rem; }
+
+  /* Make the 'How IOYou is Different' box wider on phones */
+  .different-list {
+    width: calc(100% - 2rem); /* full width minus section padding */
+    max-width: 640px;         /* allow it to breathe on larger phones */
+    min-width: 0;             /* override earlier restrictive min */
+    margin: 0 auto;           /* keep centered */
+  }
 }
 
 /* Avoid any horizontal scrolling caused by transforms/gaps */
