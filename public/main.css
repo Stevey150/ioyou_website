@@ -590,22 +590,6 @@ body {
 .hero-visuals {
   margin-top: 2rem;
   display: flex;
-  .about-phone-img {
-    width: 220px;
-    height: 410px;
-    object-fit: contain;
-  border-radius: 2em;
-  box-shadow: 0 8px 32px #e5393533;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: #e53935;
-  font-weight: 900;
-  letter-spacing: -1px;
-  position: relative;
-  transition: transform 0.2s;
-  cursor: pointer;
 }
 .visual-card:hover {
   transform: translateY(-10px) scale(1.04);
@@ -646,17 +630,6 @@ body {
   box-shadow: 0 12px 36px #e5393533, 0 2px 12px #e5393522;
   transform: translateY(-18px) scale(1.10) rotate(-2deg);
   z-index: 2;
-}
-}
-.feature-card:hover {
-  box-shadow: 0 8px 32px #e5393533, 0 2px 12px #e5393522;
-  transform: translateY(-12px) scale(1.07) rotate(-2deg);
-  z-index: 2;
-}
-}
-.feature-card:hover {
-  box-shadow: 0 8px 32px #e5393533;
-  transform: translateY(-6px) scale(1.03);
 }
 .feature-emoji {
   font-size: 1.5rem;
@@ -704,10 +677,6 @@ body {
 body {
   padding-top: 70px;
 }
-
-body {
-  padding-top: 60px;
-}
 .big-badge {
   display: inline-block;
   background: #e53935;
@@ -740,4 +709,28 @@ body {
   .navbar-link { margin: 0 0.7rem; }
   .navbar-logo-img { height: 32px; }
 }
+
+/* Mobile-specific fixes: full-bleed Features background and safe About layout */
+@media (max-width: 768px) {
+  /* Ensure the red features background touches both edges */
+  .features-bg.features-row,
+  section.features-row.features-bg {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0;
+  }
+  .features-row {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important; /* override desktop centering/negative margins */
+  }
+
+  /* Prevent About content from being cut on narrow screens */
+  .about-row { flex-direction: column; align-items: center; gap: 0.8rem; }
+  .about-phone-img { max-width: 85vw; height: auto; }
+}
+
+/* Avoid any horizontal scrolling caused by transforms/gaps */
+html, body { overflow-x: hidden; }
 }
