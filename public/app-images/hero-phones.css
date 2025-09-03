@@ -1,0 +1,32 @@
+/* Modern phone screenshots row for hero */
+.hero-modern-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.phone-screens-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  margin-top: 1.5rem;
+}
+.phone-screens-row .phone-img {
+  width: 170px;
+  max-width: 40vw;
+  height: auto;
+  border-radius: 2.5em;
+  box-shadow: 0 8px 32px #0008;
+  background: #fff;
+  border: 2px solid #e53935;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .phone-screens-row {
+    gap: 0.7rem;
+  }
+  .phone-screens-row .phone-img {
+    width: 100px;
+    border-radius: 1.2em;
+  }
+}
