@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+  command = ""
+
+# Redirect root to index.html (static)
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Make sure /help-center works directly
+[[redirects]]
+  from = "/help-center"
+  to = "/public/help-center/index.html"
+  status = 200
