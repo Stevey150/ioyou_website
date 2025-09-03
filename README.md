@@ -1,7 +1,7 @@
 # IOYou Landing Site
 
 This is a static site ready for Netlify.
-
+https://ioyouapp.netlify.app/
 ## Deploy on Netlify (UI)
 1. Log in to Netlify and click "Add new site" → "Import an existing project".
 2. Connect your Git repo containing this folder, or drag-and-drop this `website/` folder to Netlify Drop.
