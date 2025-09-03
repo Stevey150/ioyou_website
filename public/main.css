@@ -522,7 +522,7 @@ body {
   background: none;
   box-shadow: none;
 }
-.hero-headline {
+.hero-flex .hero-headline {
   font-size: 2.1rem;
   font-weight: 900;
   color: #fff;
@@ -530,7 +530,7 @@ body {
   margin-bottom: 1rem;
   text-shadow: 0 4px 24px #e5393533;
 }
-.hero-subtext {
+.hero-flex .hero-subtext {
   font-size: 1.1rem;
   color: #fff8;
   margin-bottom: 2rem;
